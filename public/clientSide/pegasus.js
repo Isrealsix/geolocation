@@ -18,7 +18,7 @@ form.addEventListener("submit", e => {
 		// errorId.value = "";
 	} else {
 		longId.textContent = "Loading...";
-		fetch(`http://localhost:3000/weather?address=${value}`).then(res => {
+		fetch(`/weather?address=${value}`).then(res => {
 			res.json().then(({ long, lat, location } = {}) => {
 				if (!location) {
 					errorId.textContent = "Sorry no results, try again...!";

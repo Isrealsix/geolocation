@@ -5,6 +5,8 @@ const request = require("request");
 const app = express();
 const geocode = require("../utils/geocode");
 
+const port = process.env.PORT || 3000;
+
 const publicDirectory = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials");
@@ -92,6 +94,6 @@ app.get("/contact", (req, res) => {
 // 	}); /
 // }); /
 
-app.listen(3000, () => {
+app.listen(port, () => {
 	console.log("Pegsus is alive!");
 });
